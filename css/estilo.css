@@ -1,0 +1,195 @@
+html {
+    padding: 0;
+    margin: 0;
+
+}
+
+.contenedor-cards{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.descripcion-tarea{
+    /*display: none;*/
+}
+
+.descripcion{
+    display: none;
+}
+
+.navbar{
+    height: 90px;
+    box-shadow: 0 0 5px 1px gray;
+    border-radius: 0 0 10px 10px;
+}
+
+.nota{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    padding: 0;
+    width: 97%;
+    background-color: rgb(255, 255, 255);
+    height: 90px;
+    border-radius: 10px;
+    
+    
+}
+
+
+.contenedor-titulo-fecha{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.contenedor-boton-play{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin: 1rem;
+}
+
+.btn-play{
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 55%;
+  border: none;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.btn-leer{
+    box-shadow: 0 0 5px 1px #0B5ED7;
+}
+.btn-editar{
+    box-shadow: 0 0 5px 1px #0B5ED7;
+}
+
+.btn-play:hover{
+    transform: scale(1.1);
+  
+  }
+
+.btn-barra{
+    margin-left: 1rem;
+}
+
+.marca{
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+.modal-general{
+    max-width: 90%;
+    height: 95vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
+}
+
+.input-descripcion{
+    resize: none;
+    height: 30vh;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(3px);
+}
+
+.container-btn-guardar-cancelar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-btn{
+    width: 25px;
+}
+
+.datos-extras{
+    display: none;
+}
+
+.clase-completada {
+    box-shadow: 0 0 5px 1px #157347;
+    background-color: #157347;
+    opacity: 35%;
+    color: aliceblue;
+}
+
+.clase-cancelada {
+    box-shadow: 0 0 5px 1px #DC3545;
+    background-color: #DC3545;
+    opacity: 35%;
+    color: aliceblue;
+}
+
+.clase-pendiente{
+    box-shadow: 0 0 5px 1px #0B5ED7;
+}
+
+.ocultar{
+    display: none;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn-menu{
+    box-shadow: 0 0 5px 1px #5C636A;
+}
+
+.texto-btn-menu{
+    margin: 10px;
+}
+
+.referencia{
+    font-weight: bold;
+}
+
+.referencia-pendiente{
+    color: #0B5ED7;
+    font-weight: bold;
+}
+.referencia-completada{
+    color: #157347;
+    font-weight: bold;
+}
+
+.referencia-cancelada{
+    color: #DC3545;
+    font-weight: bold;
+}
+
+.btn-cancelar{
+    box-shadow: 0 0 5px 1px #DC3545;
+    margin-right: 1rem;
+}
+
+.btn-aceptar{
+    box-shadow: 0 0 5px 1px #157347;
+    margin-left: 1rem;
+}
+
+.pantalla-inicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
