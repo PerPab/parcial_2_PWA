@@ -37,7 +37,16 @@ export function botonesModal() {
 
         if (document.getElementById("input-titulo").value == "" || document.getElementById("input-descripcion").value == "") {
             //document.getElementById("btn-cerrar").click();
-            console.log('falta completar los campos')
+
+            Swal.fire({
+                position: "center",
+                target: document.getElementById('modal-crear-nueva'),
+                icon: "warning",
+                title: "Debes completar los campos!",
+                showConfirmButton: false,
+                timer: 2500
+
+            });
 
         } else {
             EnviarTarea();

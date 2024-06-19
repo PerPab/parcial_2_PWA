@@ -4,6 +4,17 @@ html {
    height: 100vh;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+.swal2-container {
+    z-index: 100000;
+  }
+
+  .swal-overlay {
+    z-index: 100000000000 !important;
+}
+
 .contenedor-cards{
     padding: 0;
     display: flex;
@@ -46,6 +57,7 @@ html {
     align-items: flex-start;
     justify-content: flex-end;
     width: 80%;
+    height: 80px;
 }
 
 .contenedor-boton-play{
@@ -195,6 +207,11 @@ dialog::backdrop {
 
 .titulo-tarea{
     font-size: 1rem;
+    overflow-y: scroll;
+    
+    height: 46px;
+
+    
 }
 
 .texto-fecha{
@@ -212,6 +229,7 @@ dialog::backdrop {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 
@@ -243,6 +261,14 @@ dialog::backdrop {
     .contenedor-titulo-fecha{
         display: flex;
         justify-content: flex-start;
+    }
+
+    .modal-general{
+        max-width: 50%;
+    height: 70vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px gray;
     }
     
 
