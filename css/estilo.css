@@ -1,7 +1,7 @@
 html {
     padding: 0;
     margin: 0;
-    
+   height: 100vh;
 }
 
 .contenedor-cards{
@@ -33,7 +33,7 @@ html {
     padding: 0;
     width: 97%;
     background-color: rgb(255, 255, 255);
-    height: 90px;
+    height: 80px;
     border-radius: 10px;
     
     
@@ -193,3 +193,42 @@ dialog::backdrop {
     height: 50vh;
 }
 
+.titulo-tarea{
+    font-size: 1rem;
+}
+
+.texto-fecha{
+    font-size:smaller
+}
+.contenedor-idiomas-rango{
+    height: 50vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+@media only screen and (min-width: 700px) 
+{
+    .card-div{
+        max-width: 370px;
+    }
+    .nota{
+        width: 370px;
+        height: 150px;
+    }
+
+    .contenedor-cards{
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+
+}

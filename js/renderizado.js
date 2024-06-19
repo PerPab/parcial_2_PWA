@@ -9,7 +9,7 @@ export function RenderizaTarea() {
     listaTareas.forEach((tarea) => {
         if (contenedorTareas != null) {
             let div = document.createElement('div');
-            div.classList.add('container-fluid', 'contenedor-cards')
+            div.classList.add('container-fluid', 'card-div')
             div.innerHTML = CrearCard(tarea);
             contenedorTareas.append(div);
             document.getElementById('btn-play-' + tarea.id).addEventListener('click', function () {
@@ -46,13 +46,13 @@ export function CrearCard(tarea) {
         clase = 'clase-cancelada'
     }
     let plantilla = `
-    <div id="${tarea.id}" class="nota ${clase}">
+    <div id="${tarea.id}" class="nota p-1 ${clase}">
         <div class="contenedor-titulo-fecha">
             <div class="titulo">
-                <h5 class="m-2">${tarea.titulo}</h5>
+                <h6 class="m-1 p-1 titulo-tarea">${tarea.titulo}</h6>
             </div>
             <div id="fecha-creacion" class="fecha">
-            <small><p class="texto-fecha p-0 m-2">${tarea.fechacreacion}</p></small>
+            <small><p class="texto-fecha p-1 m-1">${tarea.fechacreacion}</p></small>
             </div>
         </div>
         <div id="desc-tarea" class="descripcion-tarea hidden">

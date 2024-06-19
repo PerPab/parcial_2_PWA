@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/icon_64.png" type="image/png">
+
     <title>Lista de tareas</title>
 </head>
 
@@ -17,6 +19,8 @@
     <div class="container-fluid m-0 p-0 contenedor-base">
         <div class="contaner-fluid contenedor-principal">
             <!--Nav bar-->
+
+
             <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top ">
                 <!--fixed-top-->
                 <div class="container-fluid">
@@ -39,6 +43,8 @@
                     </div>
                 </div>
             </nav>
+
+
             <!--Menu offcanvas-->
             <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                 id="offcanvasScrollingCrearTarea" aria-labelledby="offcanvasScrollingLabel">
@@ -69,28 +75,30 @@
                             <p class=" p-0 texto-btn-menu">Crear una nueva Tarea</p>
                         </li>
                         <li class="nav-item m-2">
-                            <button id="btn-nueva-off" class="btn-play btn-leer btn-menu" aria-current="page"
+                            <button id="btn-config-off" class="btn-play btn-leer btn-menu" aria-current="page"
                                 href="#"><img class="m-0 p-0 img-btn" src="./img/gear_icon.png"></button>
                             <p class=" p-0 texto-btn-menu">Configuracion</p>
                         </li>
                     </ul>
                 </div>
             </div>
+
             <!-- div donde se renderizan las cards-->
-            <div id="contenedorTareas" class="container-fluid contenedor-cards">
+
+            <div id="contenedorTareas" class="container-fluid contenedor-cards p-1">
 
             </div>
 
             <!--Modal pantalla crear nueva tarea-->
             <dialog class="container-fluid modal-crear modal-general" id="modal-crear-nueva">
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <h4 class="text-center">Crear nueva tarea</h4>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <input required type="text" class="form-control input-titulo" id="input-titulo"
                         placeholder="Ingrese un titulo">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <textarea required class="form-control input-descripcion" id="input-descripcion" rows="3"
                         placeholder="Que vas a hacer hoy? ..."></textarea>
                 </div>
@@ -103,23 +111,24 @@
                 </div>
             </dialog>
 
+
             <!--Modal cambiar estado-->
             <dialog class="container-fluid modal-crear modal-general" id="modal-editar">
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <h4 class="text-center">Editar tarea</h4>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <input required type="text" class="form-control input-titulo" id="input-titulo-editar">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 p-2">
                     <textarea required class="form-control input-descripcion" id="input-descripcion-editar"
                         rows="3"></textarea>
                 </div>
-                <div class="mb-3">
-                    <div class="mb-3">
+                <div class="mb-3 p-2">
+                    <div class="mb-3 p-2">
                         <h4 class="text-center">Cambiar estado</h4>
                     </div>
-                    <select id="estados" class="form-select" aria-label="Default select example">
+                    <select id="estados" class="form-select p-2" aria-label="Default select example">
                         <option value="pendiente">Pendiente</option>
                         <option value="completada">Completada</option>
                         <option value="cancelada">Cancelada</option>
@@ -139,12 +148,44 @@
             </dialog>
 
 
+            <!--Modal configuracion-->
+            <dialog class="container-fluid modal-crear modal-general" id="modal-configuracion">
+                <div class="mb-3">
+                    <h4 class="text-center">Configuracion</h4>
+                    <div class="mb-3 contenedor-idiomas-rango">
+                        <div class="mb-3 contenedor-idiomas">
+                            <h6 class="text-center">Seleccionar Idioma</h6>
+                            <select class="form-select" id="selectVoice">
+                                <option value="es-MX">Español México</option>
+                                <option value="es-ES">Español España</option>
+                                <option value="it-IT">Italiano</option>
+                                <option value="en-US">Inglés norteamericano</option>
+                                <option value="pt-BR">Portugués de brasil</option>
+                            </select>
+                        </div>
+                        <div class="div-centered">
+                            <p class="text-center" id="range-value">Velocidad de reproducción: 1</p>
+                            <input type="range" class="form-range" id="inputRate" min="0.5" max="1.5" value="1"
+                                step="0.5">
+                        </div>
+                        <div class="mb-1 container-btn-guardar-cancelar">
+                            <button id="btn-cerrar-configuracion" class="btn-play  btn-cancelar"><img
+                                    class="m-0 p-0 img-btn" src="./img/cross_icon.png"></button>
+                            <button id="btn-guardar-configuracion" class="btn-play  btn-aceptar"><img
+                                    class="m-0 p-0 img-btn" src="./img/good_icon.png"></button>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer type="module" src="./js/main.js"></script>
 </body>
 

@@ -1,48 +1,57 @@
 import { URLapi, listaTareas, conexionAPI } from "./conexion.js";
 import { guardarTarea } from "./editarNota.js"
 
+
 let modalEditar = document.getElementById("modal-editar");
 let btnCrearNav = document.getElementById("btn-nueva-nav");
 let btnCrearOff = document.getElementById("btn-nueva-off");
 let btnCerrarModal = document.getElementById("btn-cerrar");
 let modalCrear = document.getElementById("modal-crear-nueva");
 let btnGuardarNota = document.getElementById("btn-guardar");
-let textAreaValidation = document.getElementById("input-descripcion");
 let btnCerrarModalEditar = document.getElementById('btn-cerrar-meditar');
 let btnGuardarModalEditar = document.getElementById('btn-guardar-meditar');
+
 
 export function botonesModal() {
     btnCrearNav.addEventListener("click", function () {
         modalCrear.showModal();
+        document.getElementById("input-titulo").blur()
     });
 
     btnCrearOff.addEventListener("click", function () {
         modalCrear.showModal();
+        document.getElementById("input-titulo").blur()
+
     });
 
     btnCerrarModal.addEventListener("click", function () {
         modalCrear.close();
+        document.getElementById('btncerrarOffcanvas').click();
     });
 
     btnCerrarModalEditar.addEventListener("click", function () {
         modalEditar.close();
     });
 
-    btnGuardarNota.addEventListener("click", function () {
-        EnviarTarea();
-    });
+    btnGuardarNota.addEventListener("click", function () { // envia una nota nueva
 
-    btnGuardarModalEditar.addEventListener("click", function () {
-        guardarTarea();
-    });
+        if (document.getElementById("input-titulo").value == "" || document.getElementById("input-descripcion").value == "") {
+            //document.getElementById("btn-cerrar").click();
+            console.log('falta completar los campos')
 
-
-    textAreaValidation.addEventListener("input", function () {
-        if (document.getElementById("input-titulo").value != "" && document.getElementById("input-descripcion").value != "") {
-            btnGuardarNota.classList.remove('disabled');
+        } else {
+            EnviarTarea();
         }
     })
-}
+
+    document.getElementById('btncerrarOffcanvas').click();
+};
+
+btnGuardarModalEditar.addEventListener("click", function () { // guarda una nota editada
+    guardarTarea();
+    document.getElementById('btncerrarOffcanvas').click();
+});
+
 
 export function LimpiarMain() {
     let ListaTareasDom = document.getElementById('contenedorTareas');

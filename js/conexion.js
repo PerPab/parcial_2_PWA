@@ -10,6 +10,17 @@ export function conexionAPI() {
         .then((data) => listaTareas.push(...data))
         .then(() => {
             if (listaTareas.length > 0) {
+                listaTareas.sort((a, b) => { // ordena la lista por el estado
+                    const estadosFinales = ["completada", "cancelada"];
+                    if (estadosFinales.includes(a.estado) && !estadosFinales.includes(b.estado)) {
+                        return 1;
+                    }
+                    if (!estadosFinales.includes(a.estado) && estadosFinales.includes(b.estado)) {
+                        return -1;
+                    }
+                    return 0;
+                });
+
                 RenderizaTarea();
                 console.log('Conexion exitosa')
             } else {
