@@ -208,15 +208,25 @@ dialog::backdrop {
     justify-content: space-around;
 }
 
+.card-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media only screen and (min-width: 700px) 
 {
     .card-div{
+        display: flex;
         max-width: 370px;
+        justify-content: center;
+        align-items: center;
     }
     .nota{
         width: 370px;
         height: 150px;
+
     }
 
     .contenedor-cards{
@@ -228,6 +238,11 @@ dialog::backdrop {
         align-items: center;
         padding: 1rem;
         margin: 1rem;
+    }
+
+    .contenedor-titulo-fecha{
+        display: flex;
+        justify-content: flex-start;
     }
     
 
