@@ -24,7 +24,16 @@ export function conexionAPI() {
                 RenderizaTarea();
                 console.log('Conexion exitosa')
             } else {
+
                 pantallaInicio();
+                Swal.fire({
+                    position: "center",
+                    target: document.getElementById('contenedorTareas'),
+                    icon: "info",
+                    title: "No hay tareas en la lista. Prueba crear una!",
+
+
+                });
             }
         })
 

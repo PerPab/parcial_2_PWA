@@ -29,8 +29,7 @@ export function RenderizaTarea() {
 export function pantallaInicio() {
     let plantilla = `
     <div class="pantalla-inicio">
-    <h4 class="text-center">No hay Tareas para mostrar</h4>
-    <h6 class="text-center">(Prueba crear una nueva)</h6>
+    <h4 class="text-center">La lista de tareas esta vacia</h4>
     <img>
     </div>
     
@@ -46,7 +45,7 @@ export function CrearCard(tarea) {
         clase = 'clase-cancelada'
     }
     let plantilla = `
-    <div id="${tarea.id}" class="nota p-1 ${clase}">
+    <div id="${tarea.id}" class="animate__animated animate__slideInUp animate__fast nota p-1 ${clase}">
         <div class="contenedor-titulo-fecha">
             <div class="titulo">
                 <h6 class="m-1 p-1 titulo-tarea">${tarea.titulo}</h6>

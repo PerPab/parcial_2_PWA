@@ -3,13 +3,18 @@ let modalConfiguracion = document.getElementById("modal-configuracion");
 let btnConfigOff = document.getElementById('btn-config-off');
 let btnCerrarConfig = document.getElementById('btn-cerrar-configuracion');
 let btnGuardarConfig = document.getElementById('btn-guardar-configuracion');
+let btnConfiNav = document.getElementById('btn-config-nav');
 let rango = document.getElementById('inputRate');
-
 
 
 export function funcionesConfig() {
 
     btnConfigOff.addEventListener("click", function () {
+        modalConfiguracion.showModal();
+
+    });
+
+    btnConfiNav.addEventListener("click", function () {
         modalConfiguracion.showModal();
 
     });

@@ -96,6 +96,10 @@ html {
 }
 
 .marca{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-left: 1rem;
     margin-right: 3rem;
 }
@@ -230,6 +234,9 @@ dialog::backdrop {
     justify-content: center;
     align-items: center;
     padding: 0;
+}
+.logo{
+    width: 55px;
 }
 
 

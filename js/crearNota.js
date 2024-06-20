@@ -10,9 +10,11 @@ let modalCrear = document.getElementById("modal-crear-nueva");
 let btnGuardarNota = document.getElementById("btn-guardar");
 let btnCerrarModalEditar = document.getElementById('btn-cerrar-meditar');
 let btnGuardarModalEditar = document.getElementById('btn-guardar-meditar');
+let offCanvas = document.getElementById('offcanvasScrollingCrearTarea');
 
 
 export function botonesModal() {
+
     btnCrearNav.addEventListener("click", function () {
         modalCrear.showModal();
         document.getElementById("input-titulo").blur()
@@ -56,9 +58,20 @@ export function botonesModal() {
     document.getElementById('btncerrarOffcanvas').click();
 };
 
+
+
 btnGuardarModalEditar.addEventListener("click", function () { // guarda una nota editada
     guardarTarea();
     document.getElementById('btncerrarOffcanvas').click();
+    Swal.fire({
+        position: "center",
+        target: document.getElementById('nota'),
+        icon: "success",
+        title: "Cambios guardados!",
+        showConfirmButton: false,
+        timer: 1500
+
+    });
 });
 
 
@@ -98,3 +111,5 @@ export function EnviarTarea() {
             }
         })
 }
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html id="html-element" lang="es" data-bs-theme="ligth">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="img/icon_64.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     <title>Lista de tareas</title>
 </head>
@@ -22,10 +25,12 @@
             <!--Nav bar-->
 
 
-            <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
                 <!--fixed-top-->
                 <div class="container-fluid">
-                    <a class="navbar-brand marca" href="#">Lista de tareas</a>
+                    <div class="navbar-brand marca">
+                        <img class="logo animate__animated animate__rotateIn animate__delay-1s" src="./img/icon_64.png">
+                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasScrollingCrearTarea" aria-controls="offcanvasScrolling">
                         <span class="navbar-toggler-icon"></span>
@@ -38,7 +43,8 @@
                                     Tarea</button>
                             </li>
                             <li class="nav-item">
-                                <a class="btn-barra btn btn-outline-primary" href="#">Configuracion</a>
+                                <button id="btn-config-nav" class="btn-barra btn btn-outline-primary"
+                                    aria-current="page" href="#">Configuracion</button>
                             </li>
                         </ul>
                     </div>
@@ -56,22 +62,11 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="m-0">
-                        <p class="referencia">Estados</p>
-                        <li class="m-1">
-                            <p class="m-0 p-0 referencia-pendiente">Pendiente</p>
-                        </li>
-                        <li class="m-1">
-                            <p class="m-0 p-0 referencia-completada">Completada</p>
-                        </li>
-                        <li class="m-1">
-                            <p class="m-0 p-0 referencia-cancelada">Cancelada</p>
-                        </li>
-                    </ul>
+
                     <hr>
                     <ul class="navbar-nav">
                         <li class="nav-item m-2">
-                            <button id="btn-nueva-off" class="btn-play btn-leer btn-menu" aria-current="page"
+                            <button id="btn-nueva-off" class="btn-play btn-leer btn-menu " aria-current="page"
                                 href="#"><img class="m-0 p-0 img-btn" src="./img/add_icon.png"></button>
                             <p class=" p-0 texto-btn-menu">Crear una nueva Tarea</p>
                         </li>
@@ -91,7 +86,8 @@
             </div>
 
             <!--Modal pantalla crear nueva tarea-->
-            <dialog class="container-fluid modal-crear modal-general" id="modal-crear-nueva">
+            <dialog class="container-fluid modal-crear modal-general animate__animated animate__slideInUp "
+                id="modal-crear-nueva">
                 <div class="mb-3 p-2">
                     <h4 class="text-center">Crear nueva tarea</h4>
                 </div>
@@ -114,7 +110,8 @@
 
 
             <!--Modal cambiar estado-->
-            <dialog class="container-fluid modal-crear modal-general" id="modal-editar">
+            <dialog class="container-fluid modal-crear modal-general animate__animated animate__slideInUp"
+                id="modal-editar">
                 <div class="mb-3 p-2">
                     <h4 class="text-center">Editar tarea</h4>
                 </div>
@@ -150,7 +147,8 @@
 
 
             <!--Modal configuracion-->
-            <dialog class="container-fluid modal-crear modal-general" id="modal-configuracion">
+            <dialog class="container-fluid modal-crear modal-general animate__animated animate__slideInUp"
+                id="modal-configuracion">
                 <div class="mb-3">
                     <h4 class="text-center">Configuracion</h4>
                     <div class="mb-3 contenedor-idiomas-rango">
