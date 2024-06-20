@@ -41,7 +41,7 @@ export function botonesModal() {
             //document.getElementById("btn-cerrar").click();
 
             Swal.fire({
-                position: "center",
+                position: "top",
                 target: document.getElementById('modal-crear-nueva'),
                 icon: "warning",
                 title: "Debes completar los campos!",
@@ -64,7 +64,7 @@ btnGuardarModalEditar.addEventListener("click", function () { // guarda una nota
     guardarTarea();
     document.getElementById('btncerrarOffcanvas').click();
     Swal.fire({
-        position: "center",
+        position: "top",
         target: document.getElementById('nota'),
         icon: "success",
         title: "Cambios guardados!",
@@ -110,6 +110,9 @@ export function EnviarTarea() {
                 return response.json()
             }
         })
+
+    document.getElementById("input-titulo").value = '';
+    document.getElementById("input-descripcion").value = '';
 }
 
 

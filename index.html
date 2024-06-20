@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="html-element" lang="es" data-bs-theme="ligth">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,6 @@
         <div class="contaner-fluid contenedor-principal">
             <!--Nav bar-->
 
-
             <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
                 <!--fixed-top-->
                 <div class="container-fluid">
@@ -38,13 +37,12 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <button id="btn-nueva-nav" class="btn-barra btn btn-outline-primary" aria-current="page"
-                                    href="#">Crear nueva
-                                    Tarea</button>
+                                <button id="btn-nueva-nav" class="btn-play btn-leer btn-menu " aria-current="page"
+                                    href="#"><img class="m-0 p-0 img-btn" src="./img/add_icon.png"></button>
                             </li>
                             <li class="nav-item">
-                                <button id="btn-config-nav" class="btn-barra btn btn-outline-primary"
-                                    aria-current="page" href="#">Configuracion</button>
+                                <button id="btn-config-nav" class="btn-play btn-leer btn-menu" aria-current="page"
+                                    href="#"><img class="m-0 p-0 img-btn" src="./img/gear_icon.png"></button>
                             </li>
                         </ul>
                     </div>
@@ -92,18 +90,18 @@
                     <h4 class="text-center">Crear nueva tarea</h4>
                 </div>
                 <div class="mb-3 p-2">
-                    <input required type="text" class="form-control input-titulo" id="input-titulo"
+                    <input required autocomplete="off" type="text" class="form-control input-titulo" id="input-titulo"
                         placeholder="Ingrese un titulo">
                 </div>
                 <div class="mb-3 p-2">
-                    <textarea required class="form-control input-descripcion" id="input-descripcion" rows="3"
-                        placeholder="Que vas a hacer hoy? ..."></textarea>
+                    <textarea required autocomplete="off" class="form-control input-descripcion" id="input-descripcion"
+                        rows="3" placeholder="Que vas a hacer hoy? ..."></textarea>
                 </div>
 
                 <div class="mb-1 container-btn-guardar-cancelar">
                     <button id="btn-cerrar" class="btn-play btn-leer btn-cancelar "><img class="m-0 p-0 img-btn"
                             src="./img/cross_icon.png"></button>
-                    <button id="btn-guardar" class="btn-play btn-leer btn-aceptar disabled"><img class="m-0 p-0 img-btn"
+                    <button id="btn-guardar" class="btn-play btn-leer btn-aceptar "><img class="m-0 p-0 img-btn"
                             src="./img/good_icon.png"></button>
                 </div>
             </dialog>
@@ -116,18 +114,19 @@
                     <h4 class="text-center">Editar tarea</h4>
                 </div>
                 <div class="mb-3 p-2">
-                    <input required type="text" class="form-control input-titulo" id="input-titulo-editar">
+                    <input required autocomplete="off" type="text" class="form-control input-titulo"
+                        id="input-titulo-editar">
                 </div>
                 <div class="mb-3 p-2">
-                    <textarea required class="form-control input-descripcion" id="input-descripcion-editar"
-                        rows="3"></textarea>
+                    <textarea required autocomplete="off" class="form-control input-descripcion"
+                        id="input-descripcion-editar" rows="3"></textarea>
                 </div>
                 <div class="mb-3 p-2">
                     <div class="mb-3 p-2">
                         <h4 class="text-center">Cambiar estado</h4>
                     </div>
                     <select id="estados" class="form-select p-2" aria-label="Default select example">
-                        <option value="pendiente">Pendiente</option>
+                        <option selected value="pendiente">Pendiente</option>
                         <option value="completada">Completada</option>
                         <option value="cancelada">Cancelada</option>
                     </select>
@@ -176,8 +175,6 @@
                     </div>
                 </div>
             </dialog>
-
-
         </div>
     </div>
 

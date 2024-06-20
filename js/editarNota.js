@@ -6,7 +6,6 @@ let urlEdit = 'https://662e6c70a7dda1fa378ceb88.mockapi.io/api/v1/fotos/tareas/'
 
 export function abrirModalEditar(nota) {
     let modalEditar = document.getElementById("modal-editar");
-
     modalEditar.showModal();
     document.getElementById('input-titulo-editar').value = nota.titulo;
     document.getElementById('input-descripcion-editar').value = nota.descripcion;
@@ -46,4 +45,7 @@ export function guardarTarea() {
         })
 
     document.getElementById("modal-editar").close();
+    document.getElementById("input-titulo-editar").innerText = '';
+    document.getElementById("input-descripcion-editar").innerText = '';
+
 }

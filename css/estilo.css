@@ -1,18 +1,22 @@
 html {
     padding: 0;
     margin: 0;
-   height: 100vh;
+    height: 100vh;
+    background-color: #F6F6F6;
+}
+.navbar{
+    background: #3C486B;
 }
 
+.contenedor-principal{
+    background-color: #F6F6F6;
+}
 ::-webkit-scrollbar {
     display: none;
 }
-.swal2-container {
-    z-index: 100000;
-  }
 
-  .swal-overlay {
-    z-index: 100000000000 !important;
+.boton-alert{
+    background-color: #157347;
 }
 
 .contenedor-cards{
@@ -21,6 +25,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #F6F6F6;
 }
 
 .descripcion-tarea{
@@ -106,7 +111,7 @@ html {
 
 .modal-general{
     max-width: 90%;
-    height: 95vh;
+    height: 85vh;
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 5px 1px gray;
@@ -212,10 +217,7 @@ dialog::backdrop {
 .titulo-tarea{
     font-size: 1rem;
     overflow-y: scroll;
-    
     height: 46px;
-
-    
 }
 
 .texto-fecha{
@@ -256,13 +258,15 @@ dialog::backdrop {
 
     .contenedor-cards{
         display: flex;
-        width: auto;
         flex-direction: row;
+        overflow-wrap: normal;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        padding: 1rem;
-        margin: 1rem;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+       
     }
 
     .contenedor-titulo-fecha{

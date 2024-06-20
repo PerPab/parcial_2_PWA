@@ -30,8 +30,9 @@ export function conexionAPI() {
                     position: "center",
                     target: document.getElementById('contenedorTareas'),
                     icon: "info",
-                    title: "No hay tareas en la lista. Prueba crear una!",
-
+                    title: "Prueba crear una nueva tarea!",
+                    confirmButtonText: 'Aceptar',
+                    confirmButtonColor: '#6C953E'
 
                 });
             }
