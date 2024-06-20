@@ -22,7 +22,7 @@ export function conexionAPI() {
                 });
 
                 RenderizaTarea();
-                console.log('Conexion exitosa')
+                console.log('Conexión exitosa')
             } else {
 
                 pantallaInicio();

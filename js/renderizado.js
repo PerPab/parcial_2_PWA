@@ -29,7 +29,7 @@ export function RenderizaTarea() {
 export function pantallaInicio() {
     let plantilla = `
     <div class="pantalla-inicio">
-    <h4 class="text-center">La lista de tareas esta vacia</h4>
+    <h4 class="text-center">La lista de tareas esta vacía</h4>
     <img>
     </div>
     
